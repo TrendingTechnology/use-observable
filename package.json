@@ -19,12 +19,14 @@
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
     "build": "rollup -c",
+    "commit": "git-cz",
     "start": "rollup -c -w",
     "prepare": "yarn run build",
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build"
   },
   "dependencies": {
+    "prettier": "^2.0.5",
     "rxjs": "^6.6.0"
   },
   "peerDependencies": {
@@ -37,6 +39,7 @@
     "@types/jest": "^23.3.13",
     "@types/react": "^16.7.22",
     "cross-env": "^5.2.0",
+    "cz-conventional-changelog": "^3.2.0",
     "gh-pages": "^2.0.1",
     "react": "^16.9.0",
     "react-scripts": "^3.4.0",
@@ -49,5 +52,10 @@
     "rollup-plugin-typescript2": "^0.19.2",
     "rollup-plugin-url": "^2.1.0",
     "typescript": "^3.2.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
