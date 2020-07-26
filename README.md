@@ -25,16 +25,24 @@ npm install --save use-observable
 ## Usage
 
 ```tsx
-import { useObservable } from '@libreact/use-observable';
-import { interval } from 'rxjs';
+import { interval, Subject } from "rxjs";
+import { takeUntil } from "rxjs/operators";
+import { useObservable } from "@libreact/use-observable";
+
+const click$:Subject<any> = new Subject();
+const source = interval(1000).pipe(takeUntil(click$));
 
 function App() {
-  const source = interval(1000);
   const [currentCount] = useObservable(source);
+  const stopCount = ()=>{
+    click$.next(true);
+  }
+
   return (
-   <div>
-    {currentCount}
-   </div>
+    <div>
+      <div>{currentCount}</div>
+      <button onClick={stopCount} id="stop">stop!</button>
+    </div>
   );
 }
 ```
