@@ -25,17 +25,17 @@ npm install --save use-observable
 ## Usage
 
 ```tsx
-import * as React from 'react'
+import { useObservable } from '@libreact/use-observable';
+import { interval } from 'rxjs';
 
-import { useMyHook } from 'use-observable'
-
-const Example = () => {
-  const example = useMyHook()
+function App() {
+  const source = interval(1000);
+  const [currentCount] = useObservable(source);
   return (
-    <div>
-      {example}
-    </div>
-  )
+   <div>
+    {currentCount}
+   </div>
+  );
 }
 ```
 ## Core Team
