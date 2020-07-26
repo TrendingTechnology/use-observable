@@ -16,6 +16,8 @@
     "access": "public"
   },
   "scripts": {
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors init",
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
     "build": "rollup -c",
@@ -26,6 +28,7 @@
     "deploy": "gh-pages -d example/build"
   },
   "dependencies": {
+    "all-contributors-cli": "^6.17.0",
     "prettier": "^2.0.5",
     "rxjs": "^6.6.0"
   },
