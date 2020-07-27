@@ -37,6 +37,8 @@ function App() {
 }
 ```
 
+`useObservable` can take the initial value as the second parameter - `useObservable(source$, initialValue)`. If the source fires synchronously immediately (like in a `BehaviorSubject`), the value will be used as the initial value.
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
