@@ -1,8 +1,8 @@
 # use-observable
 
-> "Plug and play" for Observables in React Apps!
+> "Plug and play" for observables in React Apps!
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)]()
 [![coc-badge](https://img.shields.io/badge/codeof-conduct-ff69b4.svg?style=flat-square)]()
@@ -19,34 +19,27 @@ Note that you can use it multiple times, with various Observables.
 ## Install
 
 ```bash
-npm install --save use-observable
+npm install @libreact/use-observable
 ```
 
 ## Usage
 
 ```tsx
-import { interval, Subject } from "rxjs";
-import { takeUntil } from "rxjs/operators";
+import { interval } from "rxjs";
 import { useObservable } from "@libreact/use-observable";
 
-const click$:Subject<any> = new Subject();
-const source = interval(1000).pipe(takeUntil(click$));
+const source = interval(1000);
 
 function App() {
-  const [currentCount] = useObservable(source);
-  const stopCount = ()=>{
-    click$.next(true);
-  }
+  const [count] = useObservable(source);
 
-  return (
-    <div>
-      <div>{currentCount}</div>
-      <button onClick={stopCount} id="stop">stop!</button>
-    </div>
-  );
+  return <h1>{count}</h1>
 }
 ```
-## Core Team
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <table>
   <tr>
@@ -54,10 +47,6 @@ function App() {
      <td align="center"><a href="https://github.com/theblushingcrow"><img src="https://avatars3.githubusercontent.com/u/638818?v=4" width="100px;" alt=""/><br /><sub><b>Inbal Sinai</b></sub></a><br /></td>
 </tr>
 </table>
-
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -67,11 +56,3 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
-
-## License
-
-MIT © [NetanelBasal](https://github.com/NetanelBasal)
-
----
-
-This hook is created using [create-react-hook](https://github.com/hermanya/create-react-hook).
