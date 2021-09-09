@@ -12,14 +12,14 @@
 
 Ever had an Observable holding data that you need to maintain in the state of your React App? This method bridges that gap.
 
-It receives an Observable, subscribes to it, and stores the current version in a react state, ensuring that it persists between re-renders. 
+It receives an Observable, subscribes to it, and stores the current version in a react state, ensuring that it persists between re-renders.
 
-Note that you can use it multiple times, with various Observables.
+Note that you can use it multiple times, with various Observables. When using a `BehaviorSubject` it'll initialize the value automatically.
 
 ## Install
 
 ```bash
-npm install @libreact/use-observable
+npm install @ngneat/use-observable
 ```
 
 ## Usage
@@ -33,7 +33,7 @@ const source = interval(1000);
 function App() {
   const [count] = useObservable(source);
 
-  return <h1>{count}</h1>
+  return <h1>{count}</h1>;
 }
 ```
 
@@ -55,6 +55,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
