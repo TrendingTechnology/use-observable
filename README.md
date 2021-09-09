@@ -14,7 +14,7 @@ Ever had an Observable holding data that you need to maintain in the state of yo
 
 It receives an Observable, subscribes to it, and stores the current version in a react state, ensuring that it persists between re-renders.
 
-Note that you can use it multiple times, with various Observables. When using a `BehaviorSubject` it'll initialize the value automatically.
+Note that you can use it multiple times, with various Observables.
 
 ## Install
 
