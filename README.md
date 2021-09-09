@@ -26,7 +26,7 @@ npm install @ngneat/use-observable
 
 ```tsx
 import { interval } from "rxjs";
-import { useObservable } from "@libreact/use-observable";
+import { useObservable } from "@ngneat/use-observable";
 
 const source = interval(1000);
 
